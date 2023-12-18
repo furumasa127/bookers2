@@ -1,0 +1,25 @@
+<%= render 'list' , book: @book %>
+
+<h1>Book detail</h1>
+
+  <p>画像</p>
+  <p>投稿ユーザー画像：<%= image_tag @books.user.get_profile_image(100,100) %></p>
+
+  <%= link_to user_path(@user.id) do %>
+  <%= @user.name %>
+  <% end %>
+
+  <%= link_to book_path(@books.id) do %>
+  <%= @books.title %>
+  <% end %>
+
+  <%= @books.body %>
+
+  <% if @books.user == current_user %>
+  <p><%= link_to "edit", edit_book_path(@books.id) %></p>
+  <% end %>
+
+ <% if @books.user == current_user %>
+ <%= link_to "destroy", book_path(@books), method: :delete %>
+ <% end %>
+

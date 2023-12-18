@@ -1,22 +1,12 @@
- <h1>User info</h1>
- <%= form_with model: @book do |f| %>
- 
-  
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-  
-  <h4>Opinion</h4>
-  <%= f.text_area :body %>
-  
-  <h4>画像</h4>
-  <%= f.file_field :image, accept: "image/*" %>
-  
-  <%= f.submit 'Create Book' %>
-  <% end %>
-  
+<%= render 'list', book: @book %>
+
   <% @books.each do |book| %>
-  
+
   <p>画像</p>
-  <%= image_tag book, size: "200x200" %>
-  
+  <%= link_to book_path(book.id) do %>
+  <%= book.title %>
+  <% end %>
+  <%= book.body %>
+   <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
+
   <% end %>
