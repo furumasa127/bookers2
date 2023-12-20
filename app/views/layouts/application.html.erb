@@ -23,29 +23,46 @@
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
         <li>
-          <%= link_to "Home", user_path(current_user.id), class: "nav-link text-light" %>
+          <div class="container">
+          <script src="https://kit.fontawesome.com/9c11671e7c.js" crossorigin="anonymous"></script>
+         <i class="fa-solid fa-house" style="color: #f2f2f2;"></i>
+        <%= link_to "Home", user_path(current_user.id), class: "nav-link text-light" %></div>
         </li>
         <li>
-          <%= link_to "Users", users_path, class: "nav-link text-light" %>
+          <div class="container">
+            <i class="fa-solid fa-users" style="color: #ffffff;"></i>
+          <%= link_to "Users", users_path, class: "nav-link text-light" %></div>
         </li>
         <li>
-          <%= link_to "Books", books_path, class: "nav-link text-light" %>
+          <div class="container">
+          <i class="fa-solid fa-book-open" style="color: #ffffff;"></i>
+          <%= link_to "Books", books_path, class: "nav-link text-light" %></div>
         </li>
         <li>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link text-light" %>
+          <div class="container">
+            <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link text-light" %></div>
         </li>
       <% else %>
         <li>
-          <%= link_to "Home", top_path, class: "nav-link text-light" %>
+          <div class="container">
+             <i class="fa-solid fa-house" style="color: #f2f2f2;"></i>
+          <%= link_to "Home", root_path, class: "nav-link text-light" %></div>
         </li>
         <li>
-          <%= link_to "About", about_path, class: "nav-link text-light" %>
+          <div class="container">
+            <i class="fa-solid fa-link" style="color: #ffffff;"></i>
+          <%= link_to "About", home_about_path, class: "nav-link text-light" %></div>
         </li>
         <li>
-          <%= link_to "Sign up", new_user_registration_path, class: "nav-link text-light" %>
+          <div class="container">
+            <i class="fa-solid fa-user-plus" style="color: #ffffff;"></i>
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link text-light" %></div>
         </li>
         <li>
-          <%= link_to "Log in", new_user_session_path, class: "nav-link text-light" %>
+          <div class="container">
+            <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i>
+          <%= link_to "Log in", new_user_session_path, class: "nav-link text-light" %></div>
         </li>
       <% end %>
       </ul>

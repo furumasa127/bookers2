@@ -1,18 +1,32 @@
-<h1>User info</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+<h2>User info</h2>
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>error prohibited this obj from being saved:
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_with model: @user do |f| %>
 
-<label for="inputName">Name</label>
-<%= f.text_field :name, autofocus: true, id:"inputName" %>
+<div class="form-group"><label for="inputName">Name</label>
+<%= f.text_field :name, autofocus: true, id:"inputName" %></div>
 
-<label for="inputImage">Image</label>
-<%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %> 
+<div class="form-group"><label for="inputImage">Image</label>
+<%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %></div>
 
 
-<label>Introduction</label>
-<%= f.text_area :introduction, autofoucus: true %>
+<div class="form-group"><label for="user_image">Introduction</label>
+<%= f.text_area :introduction, autofoucus: true %></div>
 
-<%= f.submit "Update User" %>
+<div class="form-group"><%= f.submit "Update User" %></div>
 
 
 <% end %>
+</div>
+</div>
+</div>
